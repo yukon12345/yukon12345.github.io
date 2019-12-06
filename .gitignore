@@ -1,0 +1,5 @@
+.idea
+*.iml
+.svn
+config.php
+#/gen/upload/photo
