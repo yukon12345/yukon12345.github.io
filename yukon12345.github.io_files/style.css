@@ -2,7 +2,7 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
     display: block
 }
-
+body{font-size:0;}
 audio, canvas, video {
     display: inline-block;
     *display: inline;
@@ -524,7 +524,7 @@ header {
     right: 0;
     width: 100%;
     text-align: center;
-    background: url(../images/background.png) #4276b6;
+    background: #4276b6;
     box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
     z-index: 99;
     -webkit-font-smoothing: antialiased;
@@ -552,11 +552,12 @@ header p {
 
 .h1-head {
     font: 20px/20px 'Copse', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #f3f3f3;
-    text-shadow: 1px 1px 1px #968c52;
+    color: #4b4b4b;
+    text-shadow: 1px 1px 1px #ffd925;
     margin: 0px;
     white-space: nowrap;
     overflow: hidden;
+    font-weight: bold;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis
@@ -765,7 +766,7 @@ footer {
         border: 1px solid #e5e5e5;
         border-width: 1px 0;
         padding: 20px auto;
-        margin: 190px auto 20px;
+        margin: 50px auto 20px;
         max-width: 600px
     }
 
@@ -785,7 +786,9 @@ footer {
     }
 
     header {
-        padding: 10px 10px;
+        position:fixed;
+        padding: 10px 10px 10px 10px;
+        min-height: 20px;
         margin: 0
     }
 
@@ -802,10 +805,6 @@ footer {
         display: none
     }
 
-    #banner {
-        top: 20px
-    }
-
     #banner .fork {
         float: left;
         display: inline-block;
@@ -815,7 +814,7 @@ footer {
     }
 
     section {
-        margin-top: 130px;
+        margin-top: 50px;
         margin-bottom: 0px;
         width: auto
     }
@@ -825,26 +824,19 @@ footer {
     }
 }
 
-@media print, screen and (max-width: 480px) {
+@media print, screen and (max-width: 570px) {
     header {
-        position: relative;
-        padding: 5px 0px;
-        min-height: 0px
+        position: fixed;
+        padding: 10px 10px 10px 10px;
+        min-height: 20px;
     }
-
-    header h1 {
-        font-size: 24px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        -ms-text-overflow: ellipsis
-    }
-
+    #banner{padding: 0;margin: 0;}
     section {
-        margin-top: 5px
+        margin-top: 50px
     }
-
+    #banner .fork{
+        display: none;
+    }
     header ul {
         display: none
     }
@@ -859,6 +851,17 @@ footer {
 }
 
 @media print, screen and (max-height: 680px) {
+    header,#banner,#banner .fork{position: relative}
+
+    header {
+        padding: 0;margin: 0;
+        top:0;
+        min-height: 20px;
+    }
+    #banner{top:0}
+    section {
+        margin-top: 0
+    }
     footer {
         text-align: center;
         margin: 20px auto;
@@ -870,10 +873,20 @@ footer {
 }
 
 @media print, screen and (max-height: 480px) {
+    header,#banner,#banner .fork{position: relative}
+    header {
+        padding: 0;margin: 0;
+        top:0;
+        min-height: 20px;
+    }
+    #banner{top:0}
+    section {
+
+        margin-top: 0
+    }
     nav {
         display: none
     }
-
     footer {
         text-align: center;
         margin: 20px auto;
