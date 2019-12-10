@@ -851,7 +851,7 @@ footer {
 }
 
 @media print, screen and (max-height: 680px) {
-    header,#banner,#banner .fork{position: relative}
+    header,#banner{position: relative}
 
     header {
         padding: 0;margin: 0;
